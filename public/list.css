@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+body{
+    color: #333;
+}
+
+h1, h1>span{
+    position: relative;
+}
+
+h1>span::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #c7c6c6;
+    position: absolute;
+    bottom: 7px;
+    z-index: -1;
+}
+
+table{
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+table th{
+    border-bottom: 3px double #ccc;
+    font-size: 1em;
+}
+table td{
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+    padding: 10px 3px;
+}
+
+table td:nth-child(6){
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    overflow: scroll;
+}
+
+table td:not(:last-child), table th{
+    border-right: 1px solid #ccc;
+}
+
+table td{
+    text-align: center;
+}
+
+table td:nth-child(1), table td:nth-child(2){
+    width: 100px;
+}
+table td:nth-child(3){
+    width: 80px;
+}
+table td:nth-child(4){
+    width: 150px;
+}
+table td:nth-child(5){
+    width: 60px;
+}
+table td:nth-child(7),table td:nth-child(8){
+    width: 80px;
+}
+
+table td:nth-child(7)>a, table td:nth-child(8)>a{
+    font-size: 0.8em;
+    background-color: rgb(96,96,97);
+    padding: 4px 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+form>button{
+    background-color: rgb(5,5,5);
+    border: 0;
+    padding: 5px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+table td:nth-child(7)>a:hover, td:nth-child(8)>a:hover, form>button:hover{
+    background-color: rgb(240,243,159);
+    color: #333;
+}

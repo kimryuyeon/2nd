@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>예약자 명단</title>
+</head>
+<link rel="stylesheet" href="list.css">
+<body>
+    <h1><span>예약자 명단</span></h1>
+    <table>
+        <tr>
+            <th>예약 날짜</th>
+            <th>예약 시간</th>
+            <th>예약자명</th>
+            <th>연락처</th>
+            <th>인원수</th>
+            <th>요청사항</th>
+            <th>예약 변경</th>
+            <th>예약 취소</th>
+        </tr>
+        <% data.forEach(function (list, index){ %>
+        <tr>
+            <td><%= list.date %></td>
+            <td><%= list.time %></td>
+            <td><%= list.name %></td>
+            <td><%= list.tel %></td>
+            <td><%= list.personnel %></td>
+            <td><%= list.request %></td>
+            <td><a href="/change/<%= list.number %>">변경</a></td>
+            <td><a href="/cancel/<%= list.number %>">취소</a></td>
+        </tr>
+        <% }); %>
+    </table>
+    <form action="/reservation" method="get">
+        <button type="submit">예약</button>
+    </form>
+</body>
+</html>
